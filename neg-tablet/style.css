@@ -1,0 +1,194 @@
+/**
+## General styles
+This stuff can be ported from experiment to experiment.*/
+
+/** We want the page to sit flush inside the browser window - that means no margins or padding. Also, use a nice-looking serif font. */
+
+.ui-header .ui-title {margin-right:20px;margin-left:20px;}
+.ui-footer .ui-title {margin-right:20px;margin-left:20px;white-space:normal;}
+.ui-body-c, .ui-overlay-c { background:#FFFFFF; }
+.ui-page { background: white;}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: Palatino Linotype, Bookman Antiqua, Palatino, serif;
+    font-size: 16px;
+    line-height: 20px;
+    /*text-align:center;*/
+}
+
+
+/** We manage display using "slides". A slide is a <code>div</code> that takes up the entire page. Only one slide should be visible at a time. */
+.slide {
+    overflow-x: hidden;
+    width: 95%;
+    height: 95%;
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    margin-left: 0.5%;
+    padding: 1% 2% 1% 2%;
+}
+
+#objects {
+    position: relative;
+    display: table;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cells {
+    display: table-cell;
+    text-align: center;
+}
+
+.cdiv {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 218px;
+    border : 10px solid white;
+}
+
+.selectedPic {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 218px;
+    border : 10px solid red;
+}
+
+.pic {
+    width: 125px;
+    display: none;
+    z-index: 30;
+    background-size: 200 auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+
+
+#listenDiv{
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+#listenButton {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#listenDiv:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+#smileyScale{
+    position: relative;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.scale{
+    display: table-cell;
+    text-align: center;
+}
+
+.spic{
+    width: 100px;
+    border : 10px solid white;
+}
+
+.scaleChoice{
+    width: 100px;
+    border : 10px solid white;
+}
+
+.stageInstructions {
+    width: 100%;
+    font-style: oblique;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#progress {
+    width: 100%;
+    height: 50px;
+    left: 20%;
+    margin-bottom: 50px;
+}
+
+.star {
+    float: left;
+    width: 4%;
+}
+
+input, select, button {font-family: Georgia, serif; font-size: 20px;}
+
+button {
+    /**background: url(images/button-gradient.png); */
+    border: 1px solid #999;
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    min-width: 70px;
+}
+
+#sentenceText {
+  font-size: .5em;
+  font-weight: bold;
+}
+
+#logo-text {
+    font-weight: bold;
+}
+
+#instructions {
+    text-align: center;
+}
+
+.block-text {
+  width: 500px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+#legal {
+    margin: 0 auto;
+    margin-top: 1.5em;
+    font-size: 0.8em;
+}
+
+#soundtest_wrong {
+    display: none;
+    color: red;
+    font-size: 1.5em;
+}

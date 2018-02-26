@@ -1,0 +1,236 @@
+<html>
+
+<head>
+  <title>Rate these sentences</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="initial-scale=1.0" />
+</head>
+
+<body>
+
+
+  <div class="slide" id="instructions">
+    <img src="images/stanford.png" alt="Stanford University">
+    <p id='logo-text'>Stanford Language and Cognition Lab</p> 
+
+    <button type="button" onClick="this.blur(); experiment.check()"><font size="24">Start Game</button>
+    <p id="pleaseWait"></p>
+    <!--       <button type="button" id="startButton" onClick="this.blur(); $('#sound_player')[0].load(); $('#bloop_player')[0].load(); $('#wrong_player')[0].load(); $('#reward_player')[0].load(); $('#test_player')[0].load(); experiment.soundCheck()">Start Game Practice</button> -->
+  </div>
+
+  <div class="slide" id="condition">
+    <br><br><br><br><br><br><br>
+    <center>
+      <button type="button" class="conditionButton" id="none" onClick="this.blur(); experiment.start()"><font size="24">No Context</font></button>
+    </center>
+    <center>
+      <button type="button" class="conditionButton" id="target" onClick="this.blur(); experiment.start()"><font size="24">Context</font></button>
+    </center>
+  </div>
+
+  <div class="slide" id="training"></div>
+
+  <div class="slide" id="startPractice">
+    <br><br><br><br><br><br><br>
+    <center>
+      <button type="button" onClick="this.blur(); experiment.training()"><font size="24">Dot Game</font></button>
+    </center>
+    <center>
+      <button type="button" onClick="this.blur(); experiment.practiceScale()"><font size="24">Start Game Practice</font></button>
+    </center>
+
+  </div>
+
+  <div class="slide" id="practiceScale">
+    <br><br><br><br><br><br><br>
+    <div id="smileyScale"> 
+      <div class="scale">
+        <img class='spic' src="images/verybadface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/badface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/neutralface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/goodface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/verygoodface.png" />
+      </div>
+    </div>
+    <br><br><br><br>
+    <button type="button" onClick="this.blur(); experiment.practiceTrue()"><font size="24">Let's Practice! </font></button>
+  </div>
+
+  <div class="slide" id="practiceTrue">
+    <br><br><br>
+    <center>
+      <img width="200px" id="practicePlane" src="images/airplane.png" />
+    </center>
+    <br><br><br><br><br><br><br>
+    <div id="smileyScale"> 
+      <div class="scale">
+        <img class='spic' src="images/verybadface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/badface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/neutralface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/goodface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/verygoodface.png" />
+      </div>
+    </div>
+    <br><br><br><br>
+    <button type="button" onClick="this.blur(); experiment.practiceFalse()"><font size="24">More Practice!</font></button>
+  </div>
+
+  <div class="slide" id="practiceFalse">
+    <br><br><br>
+    <center>
+      <img width="200px" id="practiceBike" src="images/bicycle.png" />
+    </center>
+    <br><br><br><br><br><br><br>
+    <div id="smileyScale"> 
+      <div class="scale">
+        <img class='spic' src="images/verybadface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/badface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/neutralface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/goodface.png" />
+      </div>
+      <div class="scale">
+        <img class='spic' src="images/verygoodface.png" />
+      </div>
+    </div>
+    <br><br><br><br>
+    <button type="button" onClick="this.blur(); experiment.initStars(practiceNumber); experiment.blank(practiceCounter, practiceNumber, 'Practice trial')"><font size="24">Start Game!</font></button>
+  </div>
+
+
+  <div class="slide" id="blankSlide"> </div>
+
+  <div class="slide" id="startGame">
+    <br><br><br><br><br><br><br>
+    <center>
+      <button type="button" onClick="this.blur(); experiment.initStars(number); experiment.blank(trialCounter, number, 'Test trial')"><font size="24">Start Game</font></button>
+    </center>
+  </div>
+
+  <div class="slide" id="stage">
+    <div id="progress">
+    </div>
+
+    <div id="objects"> 
+      <div class="cells">
+        <div class="cdiv" id="c1">
+          <img class='pic' id= 'pic1'/>
+        </div>
+      </div>
+      <div class="cells">
+        <div class="cdiv" id="c2">
+          <img class='pic' id= 'pic2'/>
+        </div>
+      </div>
+      <div class="cells">
+        <div class="cdiv" id="c3">
+          <img class='pic' id= 'pic3'/>
+        </div>
+      </div>
+      <div class="cells">
+        <div class="cdiv" id="c4">
+          <img class='pic' id= 'pic4'/>
+        </div>
+      </div>
+    </div>
+
+    <!-- <img height = '120' src='images/listen.jpg' id= 'listenButton'/> -->
+<!--         <p class="stageInstructions" id="listenText">
+          (Click me!)
+        </p> -->
+        <br>
+        <br>
+        <br>
+
+        <div id="smileyScale"> 
+          <div class="scale">
+            <img class='spic' id= '1' />
+          </div>
+          <div class="scale">
+            <img class='spic' id= '2' />
+          </div>
+          <div class="scale">
+            <img class='spic' id= '3' />
+          </div>
+          <div class="scale">
+            <img class='spic' id= '4' />
+          </div>
+          <div class="scale">
+            <img class='spic' id= '5' />
+          </div>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p align="center" id="sentenceText"></p>
+<!--         <center>
+          <button type="button" id="nextTrialButton">Submit</button>
+        </center> -->
+
+<!-- comment out audio for adult study
+      <audio id="sound_player"> 
+        <source src="sentences/target_sentences/bread_positive.mp3" type="audio/mp3">
+      </audio>
+
+      <audio id="bloop_player">
+        <source src="sentences/BLOOP.mp3" type="audio/mp3">
+      </audio>
+
+      <audio id="wrong_player">
+        <source src="sentences/wrong.mp3" type="audio/mp3">
+      </audio>
+
+      <audio id="reward_player">
+        <source src="sentences/chimes_quiet.mp3" type="audio/mp3">
+      </audio>
+
+      <audio id="test_player">
+        <source src="sentences/testWord.mp3" type="audio/mp3">
+        </audio> -->
+
+      </div>
+
+      <div class="slide" id="finished">
+        <br>
+        <center>
+          Thank you!
+          <br>
+          <br>
+          <br>
+          <img src='images/verygoodface.png'/>
+        </center>
+      </div>
+      <script src="negkids.js"></script>
+
+
+    </body>
+    </html>
